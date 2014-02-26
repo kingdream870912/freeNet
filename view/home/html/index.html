@@ -1,0 +1,42 @@
+{include file="pageheader.html"}	
+<table cellspacing="1" cellpadding="3" width="100%" border = "1">
+	<tr>
+		<td>
+			{if $debugMode eq 1}
+			当前为调试模式，只需要输入nickname系统会自动创建角色，并且会无视你输入的accountName
+			{else}
+			当前为接口模式，系统只认accountName会无视你输入的nickname
+			{/if}
+		</td>
+	</tr>
+</table>
+<br/><br/>
+<table cellspacing="1" cellpadding="3" width="100%" border = "1">
+	<form action="api/login.api.php" name="loginAndRegist" method = "post">
+		<tr>
+			<td align = "center">
+				<label>昵称:</label>
+				<input type = "text" value = "" name = "nickName" />
+			</td>
+		</tr>
+		<tr>
+			<td align = "center">
+				<label>帐号:</label>
+				<input type = "text" value = "" name = "accountName" />
+			</td>
+		</tr>
+		<tr>
+			<td align = "center">
+				<label>服务器编号:</label>
+				<input type = "text" value = "" name = "serverId" />
+			</td>
+		</tr>
+		<tr>
+    		<td align="center"><br />
+      			<input type="submit"  value="登录" />
+      			<input type= "button" value = "注册" onclick = "goToRegistPage()"/> 
+    		</td>
+  		</tr>
+  	</form>
+</table>
+{include file="pagefooter.html"}
