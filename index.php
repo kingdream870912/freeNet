@@ -1,9 +1,10 @@
 <?php
-define("TITAN_CENTER" , "TITAN_CENTER");
-require_once("config/config.inc.php");
-define("SMARTY_FLAG" , "SMARTY_FLAG");
-require_once(FRAMWORK."init.php");
+define("FREE_NET" , "FREE_NET");
+define("ROOT_PATH" , dirname(__FILE__));
+$mainConfig = require_once("config/config.inc.php");
+require_once("framework/freeApp.php");
 
-$smarty -> assign("debugMode" , $GLOBALS['sysConfig']['debugMode']);
-$smarty -> display("index.html");
+$freeApp = FreeApp::getInstance($mainConfig);
+$freeApp -> run();
+
 
