@@ -1,37 +1,26 @@
 <?php
+/**
+ * 业务数据库缓存配置
+ */
 if(!defined(TITAN_CENTER)) exit();
+return array(
+	'db' => array(
+		'account' => array(
+			'write' => array('name'=>'localhost' ,'db'=>'freenet' ,'user'=>'root' ,'pwd'=>'' ,'char'=>'utf8'),
+			'read' => array('name'=>'localhost' ,'db'=>'freenet' ,'user'=>'root' ,'pwd'=>'' ,'char'=>'utf8'),
+		),
+		'data' => array(
+			'write' => array('name'=>'localhost' ,'db'=>'freenet' ,'user'=>'root' ,'pwd'=>'' ,'char'=>'utf8'),
+			'read' => array('name'=>'localhost' ,'db'=>'freenet' ,'user'=>'root' ,'pwd'=>'' ,'char'=>'utf8'),
+		),
+	),
+	'cache' => array(
+		'mc' => array(
+			array('host' =>'localhost', 'port' => '11311', 'weight' => 100),
+		),
+	),
+);
 
-/*------------------------数据库配置数组--------------------------*/
-//$dbconfig = array(
-//	//write DB
-//	'write' => array(
-//		'hostname' => 'localhost',
-//		'database' => 'titanBeta',
-//		'username' => 'root',
-//		'password' => '123456',
-//		'charset' => 'utf8',
-//		'type' => 'mysql',
-//		'debug' => true,
-//		'pconnect' => 0,
-//		'autoconnect' => 0
-//	),
-//	//read DB
-//	'read' => array(
-//		'hostname' => 'localhost',
-//		'database' => 'titanBeta',
-//		'username' => 'root',
-//		'password' => '123456',
-//		'charset' => 'utf8',
-//		'type' => 'mysql',
-//		'debug' => true,
-//		'pconnect' => 0,
-//		'autoconnect' => 0
-//	),
-//);
-///*------------------------memcache配置数组-----------------------*/
-//$CACHE_CONFIG = array(
-//	array('host' =>'localhost', 'port' => '11311', 'weight' => 100),      
-//); 
 
 
 /*------------------------PATH DEFINE---------------------------*/
