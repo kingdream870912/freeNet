@@ -1,6 +1,12 @@
 <?php
-if(!defined(TITAN_CENTER)) exit();
+if(!defined(FREE_NET)) exit();
 error_reporting(E_ALL & ~E_NOTICE);
+
+if(!defined(FRAMEWORK_ROOT)){
+	define("FRAMEWORK_ROOT" , dirname(__FILE__));
+}
+require_once FRAMEWORK_ROOT.'/config/class.inc.php';
+
 class FreeApp{
 	private $_config;
 	
@@ -19,11 +25,12 @@ class FreeApp{
 	}
 	
 	public function run(){
-		print_r($this -> _config);
+		$route = $_REQUEST;
+		$routeClass = RouteClass::getInstance($route);
+		$routeClass -> analysisRoute();
+		$routeClass -> runController();
+		$routeClass -> runAction();
 	}
 	
-	private function _getUrl(){
-		
-	}
 }
 
