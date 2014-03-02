@@ -2,7 +2,7 @@
 /**
  * 业务数据库缓存配置
  */
-if(!defined(TITAN_CENTER)) exit();
+if(!defined(FREE_NET)) exit();
 return array(
 	'db' => array(
 		'account' => array(
